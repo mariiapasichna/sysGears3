@@ -21,25 +21,19 @@ public class Main {
 */
 
     public static void main(String[] args) {
-        Archer archer1 = new Archer(1, 0.1);
-        Archer archer2 = new Archer(2, 0.3);
+        Archer archer1 = new Archer(1, 0.3);
+        Archer archer2 = new Archer(2, 0.2);
 
         if (archer1.getPriority() == 1) {
-            for (int i = 0; i <= 10; i++) {
-                if (archer1.probabilityByStep(i) > archer2.probabilityByStep(i + 1) && archer1.probabilityByStep(i) > 0.5) {
-                    System.out.println("The most optimal step for firing a shot: " + i);
-                    break;
-                } else if (archer1.probabilityByStep(i) > 0.5) {
+            for (int i = 0; i <= Archer.STEPS / 2; i++) {
+                if (archer1.probabilityByStep(i) > (1 - archer2.probabilityByStep(Archer.STEPS / 2))) {
                     System.out.println("The most optimal step for firing a shot: " + i);
                     break;
                 }
             }
         } else {
-            for (int i = 0; i <= 10; i++) {
-                if (archer2.probabilityByStep(i) > archer1.probabilityByStep(i + 1) && archer2.probabilityByStep(i) > 0.5) {
-                    System.out.println("The most optimal step for firing a shot: " + i);
-                    break;
-                } else if (archer2.probabilityByStep(i) > 0.5) {
+            for (int i = 0; i <= Archer.STEPS / 2; i++) {
+                if (archer2.probabilityByStep(i) > (1 - archer1.probabilityByStep(Archer.STEPS / 2))) {
                     System.out.println("The most optimal step for firing a shot: " + i);
                     break;
                 }

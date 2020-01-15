@@ -1,7 +1,7 @@
 package com.mariiapasichna;
 
 public class Archer {
-    private static final int STEPS = 20;
+    public static final int STEPS = 20;
     private int priority;
     private double startChance;
 
