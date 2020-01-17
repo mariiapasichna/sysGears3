@@ -20,6 +20,12 @@ public class Main {
 Наиболее оптимальный шаг для произведения выстрела (в диапазоне от 1 до 10).
 */
 
+    /*
+    Compare the probability of our hit step by step with the probability of the opponent, in case we miss and he will make
+    the maximum number of steps. Thus, if the condition is met, this is the optimal step for the shot, since the value of
+    the probability of hitting itself is already quite high compared to the initial values.
+    */
+
     public static void main(String[] args) {
         Archer archer1 = new Archer(1, 0.3);
         Archer archer2 = new Archer(2, 0.2);
